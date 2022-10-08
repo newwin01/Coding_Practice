@@ -28,15 +28,12 @@ def exist(i,j):
                 number.remove(sudoku_map[l][m])
     return number
 
-printed = False;
 
 def solution(n):
-    global printed
     if n == len(zeros):
         for pr in sudoku_map:
             print(*pr)
-            printed = True;
-        return
+        exit(0)
 
     else:
         (i,j) = zeros[n]
@@ -46,7 +43,6 @@ def solution(n):
             sudoku_map[i][j] = x
             solution(n+1)
             sudoku_map[i][j] = 0
-
 
 
 solution(0)
